@@ -89,7 +89,7 @@ class Linkedlist
     }
     
 }
-class Main
+class Palindrome
 {
     public static void main(String args[] ) throws Exception 
     {

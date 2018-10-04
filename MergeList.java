@@ -34,25 +34,27 @@ class Linkedlist
     
 node mergeTwoLists(node l1, node l2) {
     node head = new node(0);
-    node p = head;
+    node p=head;
  
-    while(l1!=null||l2!=null){
-        if(l1!=null&&l2!=null){
-            if(l1.data < l2.data){
-                p.next = l1;
-                l1=l1.next;
-            }else{
-                p.next=l2;
-                l2=l2.next;
-            }
-            p = p.next;
-        }else if(l1==null){
-            p.next = l2;
-            break;
-        }else if(l2==null){
-            p.next = l1;
-            break;
+    node p1=l1;
+    node p2=l2;
+    while(p1!=null && p2!=null){
+        if(p1.data < p2.data){
+            p.next = p1;
+            p1 = p1.next;
+        }else{
+            p.next = p2;
+            p2 = p2.next;
         }
+        p=p.next;
+    }
+ 
+    if(p1!=null){
+        p.next = p1;
+    }
+ 
+    if(p2!=null){
+        p.next = p2;
     }
  
     return head.next;
